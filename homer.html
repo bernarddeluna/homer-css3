@@ -1,0 +1,382 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+<style type="text/css">
+body {
+	margin:0;
+	padding:0;
+	background: #f6f6f6;
+	font: normal 10px/1.1em arial;
+	background: #f6f6f6;
+}
+.author {
+	position: absolute;
+	bottom:20px;
+	right:20px;
+	color:#777;
+	font-size:1.6em;
+	line-height: 1.2em;
+}
+.author a {
+	font-size: .8em;
+	color:#2b2b2b;
+	font-weight: bolder;
+}
+.body {
+	width:170px;
+	margin: 200px auto 0;
+	position:relative;
+}
+.head {
+	position:relative;
+	z-index:1;
+	height: 350px;
+	background:#fed61e;
+	border:5px solid #000;
+	-webkit-border-radius: 80px;
+	-moz-border-radius: 80px;
+	border-radius: 80px;
+	box-shadow: inset -5px -5px 0 2px rgba(0,0,0,.2),inset 5px 5px 0 2px rgba(255,250,196,.3);
+}
+
+/* hair */
+.hair, .hair > div {
+	position: absolute;
+	top:-12px;
+	left:0;
+	right:0;
+	margin: 0 auto;
+	z-index:0;
+	width: 45px;
+	height:40px;
+	border:1px solid #000;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+}
+.hair > div {margin-top:17px;}
+
+/* eyes */
+.eyebrows {
+	position: absolute;
+	top:112px;
+	left:-10px;
+	right:-10px;
+	z-index:1;
+}
+.eyebrow {
+	position:relative;
+	z-index:2;
+	float:left;
+	height: 36px;
+	width: 40px;
+	background:#fed61e;
+	border-left:2px solid #000;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	box-shadow: inset 5px 5px 0 2px rgba(255,250,196,.3);
+}
+.eyebrow:last-child {
+	float:right;
+	border-left:0;
+	border-right:2px solid #000;
+	box-shadow: inset -5px -5px 0 2px rgba(0,0,0,.2);
+}
+.eyes {
+	position: absolute;
+	top:115px;
+	left:-10px;
+	right:-10px;
+}
+.eye {
+	position:relative;
+	z-index:2;
+	float:left;
+	height: 80px;
+	width: 80px;
+	background: #fff;
+	border:2px solid #000;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	/* animation */
+	-webkit-animation: eyes 4s infinite step-start 0s;
+	-moz-animation: eyes 4s infinite step-start 0s;
+	-ms-animation: eyes 4s infinite step-start 0s;
+	animation: eyes 4s infinite step-start 0s;
+}
+.eye:last-child {
+	float:right;
+	box-shadow: inset -5px -5px 0 2px rgba(0,0,0,.05);
+}
+.iris {
+	content: "";
+	display: block;
+	width:14px;
+	height:14px;
+	background:#000;
+	position:absolute;
+	z-index:3;
+	top:50%;
+	left:2px;
+	right:0;
+	margin: -7px auto 0;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	/* animation */
+	-webkit-animation: iris 4s infinite step-start 0s;
+	-moz-animation: iris 4s infinite step-start 0s;
+	-ms-animation: iris 4s infinite step-start 0s;
+	animation: iris 4s infinite step-start 0s;
+}
+
+/* ears */
+.ears {
+	position: absolute;
+	top:170px;
+	left:-15px;
+	right:-15px;
+}
+.ear {
+	position:relative;
+	z-index:0;
+	float:left;
+	height: 40px;
+	width: 40px;
+	background:#fed61e;
+	border:5px solid #000;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+}
+.ear:last-child {
+	background:#ebce44;
+	float:right;
+	box-shadow: inset -5px -5px 0 2px rgba(0,0,0,.05);
+}
+
+/* nose */
+.nose {
+	position:absolute;
+	z-index:3;
+	top: 175px;
+	left:0;
+	right: 0;
+	margin: 0 auto;
+	height: 38px;
+	width: 46px;
+	background:#fed61e;
+	border:2px solid #000;
+	border-top:none;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	box-shadow: inset -3px -3px 0 2px rgba(0,0,0,.2), 1px 3px 0 2px rgba(0,0,0,.1);
+}
+
+/* beard */
+.beard {
+	position:absolute;
+	z-index:2;
+	top: 200px;
+	left: -15px;
+	right: -10px;
+	height: 140px;
+	width: 180px;
+	background:#d3a64b;
+	border:2px solid #000;
+	border-width: 2px 5px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	box-shadow: inset -5px -5px 0 2px rgba(0,0,0,.2), inset 5px 5px 0 2px rgba(255,250,196,.1);
+}
+.mouth {
+	position:absolute;
+	z-index:2;
+	top: 40px;
+	left:0;
+	right:0;
+	height: 55px;
+	width: 130px;
+	margin:0 auto;
+	border-bottom:5px solid #000;
+	-webkit-border-radius: 80%;
+	-moz-border-radius: 80%;
+	border-radius: 80%;
+}
+.mouth:before, .mouth:after {
+	content: "";
+	display: block;
+	position:absolute;
+	z-index:3;
+	top: 30px;
+	left:-3px;
+	height: 20px;
+	width: 20px;
+	border-left:3px solid #000;
+	-webkit-border-radius: 40%;
+	-moz-border-radius: 40%;
+	border-radius: 40%;
+	-webkit-transform: rotate(45deg);
+}
+.mouth:after {
+	left:auto;
+	right:-3px;
+	border-left:none;
+	border-right:3px solid #000;
+	-webkit-transform: rotate(-45deg);
+}
+.chin {
+	position:absolute;
+	z-index:2;
+	top: 105px;
+	left:0;
+	right:0;
+	height: 8px;
+	width: 30px;
+	margin:0 auto;
+	border-bottom:2px solid #000;
+	-webkit-border-radius: 80%;
+	-moz-border-radius: 80%;
+	border-radius: 80%;
+}
+
+/* animation */
+/* eyes */
+@-webkit-keyframes eyes {
+   0%, 100% {
+	background:#fed61e;
+	border-top: none;
+	-webkit-border-radius: 40% 40% 50% 50%;
+	-moz-border-radius: 40% 40% 50% 50%;
+	border-radius: 40% 40% 50% 50%;
+   }
+   15%, 95% {
+	background:#fff;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	border:2px solid #000;
+   }
+}
+@-moz-keyframes eyes {
+   0%, 100% {
+	background:#fed61e;
+	border-top: none;
+	-webkit-border-radius: 40% 40% 50% 50%;
+	-moz-border-radius: 40% 40% 50% 50%;
+	border-radius: 40% 40% 50% 50%;
+   }
+   15%, 95% {
+	background:#fff;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	border:2px solid #000;
+   }
+}
+@-ms-keyframes eyes {
+   0%, 100% {
+	background:#fed61e;
+	border-top: none;
+	-webkit-border-radius: 40% 40% 50% 50%;
+	-moz-border-radius: 40% 40% 50% 50%;
+	border-radius: 40% 40% 50% 50%;
+   }
+   15%, 95% {
+	background:#fff;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	border:2px solid #000;
+   }
+}
+@keyframes eyes {
+   0%, 100% {
+	background:#fed61e;
+	border-top: none;
+	-webkit-border-radius: 40% 40% 50% 50%;
+	-moz-border-radius: 40% 40% 50% 50%;
+	border-radius: 40% 40% 50% 50%;
+   }
+   15%, 95% {
+	background:#fff;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	border:2px solid #000;
+   }
+}
+
+/* iris */
+@-webkit-keyframes iris {
+	0%, 100% {
+		opacity: 0;
+	}
+	15%, 95% {
+		opacity: 1;
+	}
+}
+@-moz-keyframes iris {
+	0%, 100% {
+		opacity: 0;
+	}
+	15%, 95% {
+		opacity: 1;
+	}
+}
+@-ms-keyframes iris {
+	0%, 100% {
+		opacity: 0;
+	}
+	15%, 95% {
+		opacity: 1;
+	}
+}
+@keyframes iris {
+	0%, 100% {
+		opacity: 0;
+	}
+	15%, 95% {
+		opacity: 1;
+	}
+}
+</style>
+</head>
+<body>
+	<div class="body">
+		<div class="head">
+			<div class="eyebrows">
+				<div class="eyebrow"></div>
+				<div class="eyebrow"></div>
+			</div>
+			<div class="eyes">
+				<div class="eye"><div class="iris"></div></div>
+				<div class="eye"><div class="iris"></div></div>
+			</div>
+			<div class="nose"></div>
+			<div class="beard">
+				<div class="mouth"></div>
+				<div class="chin"></div>
+			</div>
+		</div>
+		<div class="ears">
+			<div class="ear"></div>
+			<div class="ear"></div>
+		</div>
+		<div class="hair"><div></div></div>
+	</div>
+
+	<!-- author -->
+	<p class="author">
+		Bernard De Luna<br />
+		<a href="http://twitter.com/bernarddeluna" title="@bernarddeluna">@bernarddeluna</a><br />
+		<a href="http://www.bernarddeluna.com" title="Bernard De Luna">www.bernarddeluna.com</a>
+	</p>
+</body>
+</html>
