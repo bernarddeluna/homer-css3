@@ -105,6 +105,7 @@ body {
 	/* animation */
 	-webkit-animation: eyes 4s infinite step-start 0s;
 	-moz-animation: eyes 4s infinite step-start 0s;
+	-o-animation: eyes 4s infinite step-start 0s;
 	-ms-animation: eyes 4s infinite step-start 0s;
 	animation: eyes 4s infinite step-start 0s;
 }
@@ -130,6 +131,7 @@ body {
 	/* animation */
 	-webkit-animation: iris 4s infinite step-start 0s;
 	-moz-animation: iris 4s infinite step-start 0s;
+	-o-animation: iris 4s infinite step-start 0s;
 	-ms-animation: iris 4s infinite step-start 0s;
 	animation: iris 4s infinite step-start 0s;
 }
@@ -223,6 +225,8 @@ body {
 	-moz-border-radius: 40%;
 	border-radius: 40%;
 	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	transform: rotate(45deg);
 }
 .mouth:after {
 	left:auto;
@@ -230,6 +234,8 @@ body {
 	border-left:none;
 	border-right:3px solid #000;
 	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	transform: rotate(-45deg);
 }
 .chin {
 	position:absolute;
@@ -265,6 +271,22 @@ body {
    }
 }
 @-moz-keyframes eyes {
+   0%, 100% {
+	background:#fed61e;
+	border-top: none;
+	-webkit-border-radius: 40% 40% 50% 50%;
+	-moz-border-radius: 40% 40% 50% 50%;
+	border-radius: 40% 40% 50% 50%;
+   }
+   15%, 95% {
+	background:#fff;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	border:2px solid #000;
+   }
+}
+@-o-keyframes eyes {
    0%, 100% {
 	background:#fed61e;
 	border-top: none;
@@ -323,6 +345,14 @@ body {
 	}
 }
 @-moz-keyframes iris {
+	0%, 100% {
+		opacity: 0;
+	}
+	15%, 95% {
+		opacity: 1;
+	}
+}
+@-o-keyframes iris {
 	0%, 100% {
 		opacity: 0;
 	}
